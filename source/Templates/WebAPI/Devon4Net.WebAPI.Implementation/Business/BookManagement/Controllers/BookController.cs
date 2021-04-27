@@ -49,6 +49,23 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers
         }
 
         /// <summary>
+        /// Gets a book by its genere
+        /// </summary>
+        /// <param name="genere"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("booksbygenere")]
+        [ProducesResponseType(typeof(BookDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> GetBookByGenere(string genere)
+        {
+            Devon4NetLogger.Debug("Executing GetBooksByTitle from controller BookController");
+            return Ok(await _bookService.GetBookByGenere(genere).ConfigureAwait(false));
+        }
+
+        /// <summary>
         /// Gets the entire list of books
         /// </summary>
         /// <param name="bookDto"></param>
@@ -71,7 +88,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers
         /// <param name="title"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("create")]
+        [Route("createbook")]
         [ProducesResponseType(typeof(BookDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -100,20 +117,26 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers
             return StatusCode(StatusCodes.Status200OK, result);
         }
 
+        /// <summary>
+        /// Modifies a book by its id
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <param name="bookDto"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("editbookbyid")]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BookDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> ModifyBook(Guid id, string title, string summary, string genere)
+        public async Task<ActionResult> ModifyBook(Guid bookId, BookDto bookDto)
         {
             Devon4NetLogger.Debug("Executing ModifyBook from controller BookController");
-            if (id == null ||title == null || summary == null || genere == null)
+            if (bookId == null)
             {
-                return BadRequest("The id of the employee must be provided");
+                return BadRequest("The id of the book must be provided");
             }
-            return Ok(await _employeeService.ModifyEmployeeById(employeeDto.Id, employeeDto.Name, employeeDto.Surname, employeeDto.Mail).ConfigureAwait(false));
+            return Ok(await _bookService.ModifyBookById(bookId, bookDto).ConfigureAwait(false));
         }
     }
 }

@@ -31,6 +31,22 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
             return await GetFirstOrDefault(x => x.Title == title).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Get a book by genere
+        /// </summary>
+        /// <param name="genere"></param>
+        /// <returns></returns>
+        public async Task<Book> GetBookByGenere(string genere)
+        {
+            Devon4NetLogger.Debug($"GetBookByTitle method from repository BookRepository with value : {genere}");
+
+            return await GetFirstOrDefault(x => x.Genere == genere).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get all books
+        /// </summary>
+        /// <returns></returns>
         public async Task<IList<Book>> GetAllBooks()
         {
             Devon4NetLogger.Debug($"GetAllBooks method from repository BookRepository");
@@ -47,15 +63,15 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         {
             Devon4NetLogger.Debug($"Create method from repository AuthorRepository with value : {bookDto.Title}, {bookDto.Summary}, {bookDto.Genere}");
 
-            return await Create(new Book { Title = bookDto.Title, Summary = bookDto.Summary, Genere = bookDto.Genere });
+            return await Create(new Book { Title = bookDto.Title, Summary = bookDto.Summary, Genere = bookDto.Genere }).ConfigureAwait(false);
         }
 
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="id"></param>
-            /// <returns></returns>
-            public async Task<Guid> Delete(Guid id)
+        /// <summary>
+        /// Delete a book
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Guid> Delete(Guid id)
         {
             Devon4NetLogger.Debug($"Delete method from repository BookRepository with value : {id}");
 

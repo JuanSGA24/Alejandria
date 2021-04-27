@@ -17,6 +17,8 @@ namespace Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces
         /// <returns></returns>
         Task<Book> GetBookByTitle(string title);
 
+        Task<Book> GetBookByGenere(string genere);
+
         /// <summary>
         /// Get list of all books
         /// </summary>

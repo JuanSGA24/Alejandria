@@ -5,6 +5,7 @@ using Devon4Net.Domain.UnitOfWork.Common;
 using Devon4Net.Domain.UnitOfWork.Enums;
 using Devon4Net.Infrastructure.Common.Helpers;
 using Devon4Net.Infrastructure.Common.Options;
+using Devon4Net.Infrastructure.Common.Options.CircuitBreaker;
 using Devon4Net.Infrastructure.Common.Options.MediatR;
 using Devon4Net.Infrastructure.Common.Options.RabbitMq;
 using Devon4Net.Infrastructure.FluentValidation;
@@ -49,6 +50,7 @@ namespace Devon4Net.WebAPI.Implementation.Configure
             SetupDatabase(ref services, ref configuration);
             SetupJwtPolicies(ref services);
             SetupFluentValidators(ref services);
+            SetupOptions(ref services, ref configuration);
 
             var assemblyToScan = Assembly.GetAssembly(typeof(DevonConfiguration));
 
@@ -119,6 +121,8 @@ namespace Devon4Net.WebAPI.Implementation.Configure
         private static void SetupOptions(ref IServiceCollection services, ref IConfiguration configuration)
         {
             services.GetTypedOptions<AlejandriaOptions>(configuration, "Alejandria");
+            services.GetTypedOptions<CircuitBreakerOptions>(configuration, "CircuitBreaker");
+
         }
     }
 }

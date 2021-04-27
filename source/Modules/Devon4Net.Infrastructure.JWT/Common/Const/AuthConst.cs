@@ -8,5 +8,7 @@
         public const string AuthenticationScheme = "Bearer";
         public const string DevonSampleUserRole = "DevonSampleUserRole";
         public const string DevonSamplePolicy = "DevonSamplePolicy";
+        public const string Librarian = "Librarian";
+        public const string Author = "Author";
     }
 }

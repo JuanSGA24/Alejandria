@@ -1,9 +1,12 @@
 ﻿using Devon4Net.Domain.UnitOfWork.Service;
 using Devon4Net.Domain.UnitOfWork.UnitOfWork;
+using Devon4Net.Infrastructure.CircuitBreaker.Common.Enums;
+using Devon4Net.Infrastructure.CircuitBreaker.Handler;
 using Devon4Net.Infrastructure.Log;
 using Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers;
 using Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Converters;
 using Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Dto;
+using Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto;
 using Devon4Net.WebAPI.Implementation.Domain.Database;
 using Devon4Net.WebAPI.Implementation.Domain.Entities;
 using Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces;
@@ -11,6 +14,7 @@ using Devon4Net.WebAPI.Implementation.Options;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,15 +29,19 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         private readonly IAuthorRepository _authorRepository;
         private readonly IBookRepository _bookRepository;
         private readonly IAuthorBookRepository _authorBookRepository;
+       // private readonly IUserRepository _userRepository;
+        private IHttpClientHandler _httpClientHandler;
 
         private readonly AlejandriaOptions _alejandriaOptions;
 
 
-        public AuthorService(IUnitOfWork<AlejandriaContext> uoW, IOptions<AlejandriaOptions> alejandriaOptions): base(uoW)
+        public AuthorService(IUnitOfWork<AlejandriaContext> uoW, IOptions<AlejandriaOptions> alejandriaOptions, IHttpClientHandler httpClientHandler): base(uoW)
         {
             _authorRepository = uoW.Repository<IAuthorRepository>();
             _bookRepository = uoW.Repository<IBookRepository>();
             _authorBookRepository = uoW.Repository<IAuthorBookRepository>();
+           // _userRepository = uoW.Repository<IUserRepository>();
+            _httpClientHandler = httpClientHandler;
 
             _alejandriaOptions = alejandriaOptions.Value;
         }
@@ -69,24 +77,23 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         {
             Devon4NetLogger.Debug($"CreateAuthor method from service AuthorService with value : {authorDto.Name}, {authorDto.Surname}, {authorDto.Email}, {authorDto.Phone}");
 
-            if (string.IsNullOrEmpty(authorDto.Name) || string.IsNullOrWhiteSpace(authorDto.Name))
+            if (authorDto == null || authorDto.Name == null || authorDto.Surname == null || authorDto.Email == null || authorDto.Phone == null)
             {
-                throw new ArgumentException("The 'Name' field can not be null.");
+                throw new ArgumentException("One or more field can not be null.");
             }
 
-            if (string.IsNullOrEmpty(authorDto.Surname) || string.IsNullOrWhiteSpace(authorDto.Surname))
-            {
-                throw new ArgumentException("The 'Surname' field can not be null.");
-            }
+            return AuthorConverter.ModelToDto(await _authorRepository.Create(authorDto).ConfigureAwait(false));
+        }
 
-            if (string.IsNullOrEmpty(authorDto.Email) || string.IsNullOrWhiteSpace(authorDto.Email))
-            {
-                throw new ArgumentException("The 'Email' field can not be null.");
-            }
+        public async Task<BookDto> PublishBook(Guid authorId, BookDto bookDto)
+        {
+            Devon4NetLogger.Debug($"PublishBook method from service AuthorService with id : {authorId} and values: {bookDto.Title}, {bookDto.Summary}, {bookDto.Genere}");
 
-            var result = await _authorRepository.Create(authorDto).ConfigureAwait(false);
+            var newBookDto = await _httpClientHandler.Send<BookDto>(HttpMethod.Post, "Books", "/v1/bookmanagement/createbook", bookDto, MediaType.ApplicationJson, null, true, true).ConfigureAwait(false);
+            var newBook = await _bookRepository.GetFirstOrDefault(x => x.Title == bookDto.Title && x.Summary == bookDto.Summary && x.Genere == bookDto.Genere).ConfigureAwait(false);
+            var authorBook = await _authorBookRepository.Create(authorId, newBook.Id, DateTime.Now, DateTime.Now.AddYears(_alejandriaOptions.Validity)).ConfigureAwait(false);
 
-            return AuthorConverter.ModelToDto(result);
+           return newBookDto;
         }
 
         /// <summary>
@@ -96,9 +103,13 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         /// <returns></returns>
         public async Task<Guid> DeleteAuthor(Guid id)
         {
-            var result = await _authorRepository.Delete(id).ConfigureAwait(false);
-
-            return id;
+            return await _authorRepository.Delete(id).ConfigureAwait(false);
         }
+
+        /*public Task<AuthorDto> CreateUser(string userId, string password, string role)
+        {
+            throw new NotImplementedException();
+        }*/
+
     }
 }

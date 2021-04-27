@@ -1,0 +1,424 @@
+2021-04-26 11:54:29.051 +02:00 [INF] Please setup your database in order to have the RabbitMq messaging backup feature
+2021-04-26 11:54:29.857 +02:00 [INF] Please setup your database in order to have the RabbitMq messaging backup feature
+2021-04-26 11:54:34.771 +02:00 [DBG] Hosting starting
+2021-04-26 11:54:34.948 +02:00 [INF] User profile is available. Using 'C:\Users\jugalleg\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-04-26 11:54:35.118 +02:00 [DBG] Reading data from file 'C:\Users\jugalleg\AppData\Local\ASP.NET\DataProtection-Keys\key-760ee4eb-9dd8-44e3-93a8-71a1e7282097.xml'.
+2021-04-26 11:54:35.177 +02:00 [DBG] Found key {760ee4eb-9dd8-44e3-93a8-71a1e7282097}.
+2021-04-26 11:54:35.206 +02:00 [DBG] Considering key {760ee4eb-9dd8-44e3-93a8-71a1e7282097} with expiration date 2021-06-23 13:03:50Z as default key.
+2021-04-26 11:54:35.225 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.13.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-04-26 11:54:35.239 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2021-04-26 11:54:35.244 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.13.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-04-26 11:54:35.254 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2021-04-26 11:54:35.267 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2021-04-26 11:54:35.281 +02:00 [DBG] Using key {760ee4eb-9dd8-44e3-93a8-71a1e7282097} as the default key.
+2021-04-26 11:54:35.287 +02:00 [DBG] Key ring with default key {760ee4eb-9dd8-44e3-93a8-71a1e7282097} was loaded during application startup.
+2021-04-26 11:54:35.501 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2021-04-26 11:54:35.596 +02:00 [DBG] Initializing Razor view compiler with no compiled views.
+2021-04-26 11:54:35.683 +02:00 [DBG] Failed to locate the development https certificate at 'null'.
+2021-04-26 11:54:35.691 +02:00 [WRN] Overriding address(es) 'https://localhost:8085'. Binding to endpoints defined in UseKestrel() instead.
+2021-04-26 11:54:35.747 +02:00 [INF] Now listening on: https://0.0.0.0:8085
+2021-04-26 11:54:35.750 +02:00 [DBG] Loaded hosting startup assembly Devon4Net.Application.WebAPI
+2021-04-26 11:54:35.753 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-26 11:54:35.756 +02:00 [INF] Hosting environment: Development
+2021-04-26 11:54:35.768 +02:00 [INF] Content root path: C:\Juan\AlejandriaGit\Alejandria\source\Templates\WebAPI\Devon4Net.Application.WebAPI
+2021-04-26 11:54:35.773 +02:00 [DBG] Hosting started
+2021-04-26 11:54:36.113 +02:00 [DBG] Connection id "0HM88J56CP4OC" received FIN.
+2021-04-26 11:54:36.135 +02:00 [DBG] Connection id "0HM88J56CP4OC" accepted.
+2021-04-26 11:54:36.138 +02:00 [DBG] Connection id "0HM88J56CP4OC" started.
+2021-04-26 11:54:36.173 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 11:54:36.325 +02:00 [DBG] Connection id "0HM88J56CP4OC" stopped.
+2021-04-26 11:54:36.335 +02:00 [DBG] Connection id "0HM88J56CP4OC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 11:54:37.884 +02:00 [DBG] Connection id "0HM88J56CP4OD" accepted.
+2021-04-26 11:54:38.097 +02:00 [DBG] Connection id "0HM88J56CP4OD" started.
+2021-04-26 11:54:38.102 +02:00 [DBG] Connection id "0HM88J56CP4OE" accepted.
+2021-04-26 11:54:38.206 +02:00 [DBG] Connection id "0HM88J56CP4OE" started.
+2021-04-26 11:54:38.222 +02:00 [DBG] Connection id "0HM88J56CP4OF" accepted.
+2021-04-26 11:54:38.289 +02:00 [DBG] Connection id "0HM88J56CP4OF" started.
+2021-04-26 11:54:38.473 +02:00 [DBG] Connection id "0HM88J56CP4OE" received FIN.
+2021-04-26 11:54:38.474 +02:00 [DBG] Connection id "0HM88J56CP4OD" received FIN.
+2021-04-26 11:54:38.474 +02:00 [DBG] Connection id "0HM88J56CP4OF" received FIN.
+2021-04-26 11:54:38.507 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 11:54:38.502 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 11:54:38.518 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 11:54:38.610 +02:00 [DBG] Connection id "0HM88J56CP4OF" stopped.
+2021-04-26 11:54:38.671 +02:00 [DBG] Connection id "0HM88J56CP4OE" stopped.
+2021-04-26 11:54:38.777 +02:00 [DBG] Connection id "0HM88J56CP4OD" stopped.
+2021-04-26 11:54:38.784 +02:00 [DBG] Connection id "0HM88J56CP4OF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 11:54:38.811 +02:00 [DBG] Connection id "0HM88J56CP4OE" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 11:54:38.847 +02:00 [DBG] Connection id "0HM88J56CP4OD" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 11:54:38.917 +02:00 [DBG] Connection id "0HM88J56CP4OG" accepted.
+2021-04-26 11:54:38.973 +02:00 [DBG] Connection id "0HM88J56CP4OG" started.
+2021-04-26 11:54:39.066 +02:00 [DBG] Connection id "0HM88J56CP4OH" accepted.
+2021-04-26 11:54:39.093 +02:00 [DBG] Connection id "0HM88J56CP4OH" started.
+2021-04-26 11:54:39.245 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/swagger/index.html  
+2021-04-26 11:54:39.258 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-04-26 11:54:39.261 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 11:54:39.290 +02:00 [DBG] The request path /swagger/index.html does not match an existing file
+2021-04-26 11:54:39.323 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 11:54:39.555 +02:00 [DBG] Connection id "0HM88J56CP4OG" completed keep alive response.
+2021-04-26 11:54:39.561 +02:00 [INF] Request finished in 324.0533ms 200 text/html;charset=utf-8
+2021-04-26 11:54:39.609 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/swagger/swagger-ui-bundle.js  
+2021-04-26 11:54:39.612 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 11:54:39.640 +02:00 [DBG] The request path /swagger/swagger-ui-bundle.js does not match an existing file
+2021-04-26 11:54:39.640 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/swagger/swagger-ui.css  
+2021-04-26 11:54:39.656 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 11:54:39.659 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 11:54:39.671 +02:00 [DBG] The request path /swagger/swagger-ui.css does not match an existing file
+2021-04-26 11:54:39.674 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 11:54:39.772 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-04-26 11:54:39.794 +02:00 [DBG] Connection id "0HM88J56CP4OG" completed keep alive response.
+2021-04-26 11:54:39.803 +02:00 [INF] Request finished in 162.577ms 200 text/css
+2021-04-26 11:54:39.805 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-04-26 11:54:39.807 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/swagger/swagger-ui-standalone-preset.js  
+2021-04-26 11:54:39.813 +02:00 [DBG] Connection id "0HM88J56CP4OH" completed keep alive response.
+2021-04-26 11:54:39.817 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 11:54:39.820 +02:00 [INF] Request finished in 210.8833ms 200 application/javascript
+2021-04-26 11:54:39.825 +02:00 [DBG] The request path /swagger/swagger-ui-standalone-preset.js does not match an existing file
+2021-04-26 11:54:39.837 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 11:54:39.868 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-04-26 11:54:39.873 +02:00 [DBG] Connection id "0HM88J56CP4OG" completed keep alive response.
+2021-04-26 11:54:39.881 +02:00 [INF] Request finished in 73.5089ms 200 application/javascript
+2021-04-26 11:54:39.909 +02:00 [DBG] Connection id "0HM88J56CP4OI" accepted.
+2021-04-26 11:54:39.912 +02:00 [DBG] Connection id "0HM88J56CP4OI" started.
+2021-04-26 11:54:39.924 +02:00 [DBG] Connection id "0HM88J56CP4OI" received FIN.
+2021-04-26 11:54:39.928 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 11:54:39.990 +02:00 [DBG] Connection id "0HM88J56CP4OI" stopped.
+2021-04-26 11:54:39.991 +02:00 [DBG] Connection id "0HM88J56CP4OI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 11:54:40.184 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/swagger/v1/swagger.json  
+2021-04-26 11:54:40.187 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 11:54:40.191 +02:00 [DBG] The request path /swagger/v1/swagger.json does not match an existing file
+2021-04-26 11:54:40.195 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 11:54:42.387 +02:00 [DBG] Connection id "0HM88J56CP4OG" completed keep alive response.
+2021-04-26 11:54:42.390 +02:00 [INF] Request finished in 2207.0277ms 200 application/json;charset=utf-8
+2021-04-26 11:54:47.583 +02:00 [DBG] Connection id "0HM88J56CP4OH" received FIN.
+2021-04-26 11:54:47.583 +02:00 [DBG] Connection id "0HM88J56CP4OG" received FIN.
+2021-04-26 11:54:47.589 +02:00 [DBG] Connection id "0HM88J56CP4OH" sending FIN because: "The client closed the connection."
+2021-04-26 11:54:47.592 +02:00 [DBG] Connection id "0HM88J56CP4OG" sending FIN because: "The client closed the connection."
+2021-04-26 11:54:47.595 +02:00 [DBG] Connection id "0HM88J56CP4OH" disconnecting.
+2021-04-26 11:54:47.601 +02:00 [DBG] Connection id "0HM88J56CP4OG" disconnecting.
+2021-04-26 11:54:47.612 +02:00 [DBG] Connection id "0HM88J56CP4OH" stopped.
+2021-04-26 11:54:47.618 +02:00 [DBG] Connection id "0HM88J56CP4OG" stopped.
+2021-04-26 12:00:54.442 +02:00 [DBG] Connection id "0HM88J56CP4OJ" accepted.
+2021-04-26 12:00:54.447 +02:00 [DBG] Connection id "0HM88J56CP4OJ" started.
+2021-04-26 12:00:54.471 +02:00 [DBG] Connection id "0HM88J56CP4OJ" received FIN.
+2021-04-26 12:00:54.474 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 12:00:54.536 +02:00 [DBG] Connection id "0HM88J56CP4OJ" stopped.
+2021-04-26 12:00:54.553 +02:00 [DBG] Connection id "0HM88J56CP4OJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 12:00:54.681 +02:00 [DBG] Connection id "0HM88J56CP4OK" accepted.
+2021-04-26 12:00:54.692 +02:00 [DBG] Connection id "0HM88J56CP4OK" started.
+2021-04-26 12:00:54.745 +02:00 [DBG] Connection id "0HM88J56CP4OK" received FIN.
+2021-04-26 12:00:54.750 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 12:00:54.770 +02:00 [DBG] Connection id "0HM88J56CP4OL" accepted.
+2021-04-26 12:00:54.813 +02:00 [DBG] Connection id "0HM88J56CP4OK" stopped.
+2021-04-26 12:00:54.817 +02:00 [DBG] Connection id "0HM88J56CP4OL" started.
+2021-04-26 12:00:54.820 +02:00 [DBG] Connection id "0HM88J56CP4OK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 12:00:54.837 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/v1/bookmanagement/booksbygenere?genere=string  
+2021-04-26 12:00:54.839 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 12:00:54.850 +02:00 [DBG] The request path /v1/bookmanagement/booksbygenere does not match a supported file type
+2021-04-26 12:00:54.867 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 12:00:54.871 +02:00 [DBG] The request path  does not match the path filter
+2021-04-26 12:00:54.900 +02:00 [DBG] No candidates found for the request path '/v1/bookmanagement/booksbygenere'
+2021-04-26 12:00:54.902 +02:00 [DBG] Request did not match any endpoints
+2021-04-26 12:00:54.990 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2021-04-26 12:00:55.047 +02:00 [DBG] Connection id "0HM88J56CP4OM" accepted.
+2021-04-26 12:00:55.050 +02:00 [DBG] Request successfully matched the route with name 'null' and template 'v1/bookmanagement/booksbygenere'
+2021-04-26 12:00:55.051 +02:00 [DBG] Connection id "0HM88J56CP4OM" started.
+2021-04-26 12:00:55.138 +02:00 [INF] Route matched with {action = "GetBookByGenere", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetBookByGenere(System.String) on controller Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController (Devon4Net.WebAPI.Implementation).
+2021-04-26 12:00:55.151 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter (Order: -2147483548)"]
+2021-04-26 12:00:55.163 +02:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-04-26 12:00:55.173 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2021-04-26 12:00:55.186 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2021-04-26 12:00:55.197 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2021-04-26 12:00:55.211 +02:00 [DBG] Executing controller factory for controller Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController (Devon4Net.WebAPI.Implementation)
+2021-04-26 12:00:55.491 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2021-04-26 12:00:55.533 +02:00 [DBG] Executed controller factory for controller Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController (Devon4Net.WebAPI.Implementation)
+2021-04-26 12:00:55.553 +02:00 [DBG] Attempting to bind parameter 'genere' of type 'System.String' ...
+2021-04-26 12:00:55.571 +02:00 [DBG] Attempting to bind parameter 'genere' of type 'System.String' using the name 'genere' in request data ...
+2021-04-26 12:00:55.581 +02:00 [DBG] Done attempting to bind parameter 'genere' of type 'System.String'.
+2021-04-26 12:00:55.587 +02:00 [DBG] Done attempting to bind parameter 'genere' of type 'System.String'.
+2021-04-26 12:00:55.594 +02:00 [DBG] Attempting to validate the bound parameter 'genere' of type 'System.String' ...
+2021-04-26 12:00:55.603 +02:00 [DBG] Done attempting to validate the bound parameter 'genere' of type 'System.String'.
+2021-04-26 12:00:55.617 +02:00 [DBG] Executing GetBooksByTitle from controller BookController
+2021-04-26 12:00:55.629 +02:00 [DBG] GetBookByGenere method from service Bookservice with value : string
+2021-04-26 12:00:57.061 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'AlejandriaContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2021-04-26 12:00:57.430 +02:00 [DBG] queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Book>(
+    asyncEnumerable: new QueryingEnumerable<Book>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache, 
+        null, 
+        ReaderColumn[] { ReaderColumn<Guid>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<object>, }, 
+        Func<QueryContext, DbDataReader, ResultContext, int[], ResultCoordinator, Book>, 
+        Devon4Net.WebAPI.Implementation.Domain.Database.AlejandriaContext, 
+        null
+    ), 
+    cancellationToken: queryContext.CancellationToken)
+2021-04-26 12:00:57.528 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2021-04-26 12:00:57.560 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (31ms).
+2021-04-26 12:00:57.576 +02:00 [DBG] Opening connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:00:58.412 +02:00 [DBG] Opened connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:00:58.433 +02:00 [DBG] Executing DbCommand [Parameters=[@__genere_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Genere", b."Summary", b."Title"
+FROM "Book" AS b
+WHERE b."Genere" = @__genere_0
+LIMIT 1
+2021-04-26 12:00:58.486 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@__genere_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Genere", b."Summary", b."Title"
+FROM "Book" AS b
+WHERE b."Genere" = @__genere_0
+LIMIT 1
+2021-04-26 12:00:58.535 +02:00 [DBG] A data reader was disposed.
+2021-04-26 12:00:58.545 +02:00 [DBG] Closing connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:00:58.562 +02:00 [DBG] Closed connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:00:58.579 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2021-04-26 12:00:58.596 +02:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2021-04-26 12:00:58.599 +02:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2021-04-26 12:00:58.602 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2021-04-26 12:00:58.609 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2021-04-26 12:00:58.612 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2021-04-26 12:00:58.617 +02:00 [INF] Executing ObjectResult, writing value of type 'Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto'.
+2021-04-26 12:00:58.642 +02:00 [INF] Executed action Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController.GetBookByGenere (Devon4Net.WebAPI.Implementation) in 3429.8122ms
+2021-04-26 12:00:58.649 +02:00 [DBG] Connection id "0HM88J56CP4OL" completed keep alive response.
+2021-04-26 12:00:58.656 +02:00 [DBG] 'AlejandriaContext' disposed.
+2021-04-26 12:00:58.663 +02:00 [INF] Request finished in 3826.5468ms 200 application/json; charset=utf-8
+2021-04-26 12:01:03.234 +02:00 [DBG] Connection id "0HM88J56CP4OM" received FIN.
+2021-04-26 12:01:03.234 +02:00 [DBG] Connection id "0HM88J56CP4OL" received FIN.
+2021-04-26 12:01:03.246 +02:00 [DBG] Connection id "0HM88J56CP4OM" sending FIN because: "The client closed the connection."
+2021-04-26 12:01:03.263 +02:00 [DBG] Connection id "0HM88J56CP4OL" disconnecting.
+2021-04-26 12:01:03.282 +02:00 [DBG] Connection id "0HM88J56CP4OM" disconnecting.
+2021-04-26 12:01:03.307 +02:00 [DBG] Connection id "0HM88J56CP4OL" sending FIN because: "The client closed the connection."
+2021-04-26 12:01:03.323 +02:00 [DBG] Connection id "0HM88J56CP4OM" stopped.
+2021-04-26 12:01:03.353 +02:00 [DBG] Connection id "0HM88J56CP4OL" stopped.
+2021-04-26 12:01:10.988 +02:00 [DBG] Connection id "0HM88J56CP4ON" accepted.
+2021-04-26 12:01:11.011 +02:00 [DBG] Connection id "0HM88J56CP4ON" started.
+2021-04-26 12:01:11.042 +02:00 [DBG] Connection id "0HM88J56CP4ON" received FIN.
+2021-04-26 12:01:11.046 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 12:01:11.115 +02:00 [DBG] Connection id "0HM88J56CP4ON" stopped.
+2021-04-26 12:01:11.117 +02:00 [DBG] Connection id "0HM88J56CP4ON" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 12:01:11.239 +02:00 [DBG] Connection id "0HM88J56CP4OO" accepted.
+2021-04-26 12:01:11.245 +02:00 [DBG] Connection id "0HM88J56CP4OO" started.
+2021-04-26 12:01:11.257 +02:00 [DBG] Connection id "0HM88J56CP4OO" received FIN.
+2021-04-26 12:01:11.259 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2021-04-26 12:01:11.305 +02:00 [DBG] Connection id "0HM88J56CP4OO" stopped.
+2021-04-26 12:01:11.310 +02:00 [DBG] Connection id "0HM88J56CP4OO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-04-26 12:01:11.360 +02:00 [DBG] Connection id "0HM88J56CP4OP" accepted.
+2021-04-26 12:01:11.368 +02:00 [DBG] Connection id "0HM88J56CP4OP" started.
+2021-04-26 12:01:11.414 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:8085/v1/bookmanagement/booksbygenere?genere=Novela  
+2021-04-26 12:01:11.420 +02:00 [DBG] The host 'localhost' is excluded. Skipping HSTS header.
+2021-04-26 12:01:11.425 +02:00 [DBG] The request path /v1/bookmanagement/booksbygenere does not match a supported file type
+2021-04-26 12:01:11.430 +02:00 [DBG] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["en-US","en"]'.
+2021-04-26 12:01:11.438 +02:00 [DBG] The request path  does not match the path filter
+2021-04-26 12:01:11.441 +02:00 [DBG] No candidates found for the request path '/v1/bookmanagement/booksbygenere'
+2021-04-26 12:01:11.445 +02:00 [DBG] Request did not match any endpoints
+2021-04-26 12:01:11.447 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2021-04-26 12:01:11.449 +02:00 [DBG] Request successfully matched the route with name 'null' and template 'v1/bookmanagement/booksbygenere'
+2021-04-26 12:01:11.455 +02:00 [INF] Route matched with {action = "GetBookByGenere", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetBookByGenere(System.String) on controller Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController (Devon4Net.WebAPI.Implementation).
+2021-04-26 12:01:11.462 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter (Order: -2147483548)"]
+2021-04-26 12:01:11.469 +02:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-04-26 12:01:11.474 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2021-04-26 12:01:11.478 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2021-04-26 12:01:11.485 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2021-04-26 12:01:11.491 +02:00 [DBG] Executing controller factory for controller Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController (Devon4Net.WebAPI.Implementation)
+2021-04-26 12:01:11.495 +02:00 [DBG] Executed controller factory for controller Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController (Devon4Net.WebAPI.Implementation)
+2021-04-26 12:01:11.504 +02:00 [DBG] Attempting to bind parameter 'genere' of type 'System.String' ...
+2021-04-26 12:01:11.507 +02:00 [DBG] Attempting to bind parameter 'genere' of type 'System.String' using the name 'genere' in request data ...
+2021-04-26 12:01:11.510 +02:00 [DBG] Done attempting to bind parameter 'genere' of type 'System.String'.
+2021-04-26 12:01:11.516 +02:00 [DBG] Done attempting to bind parameter 'genere' of type 'System.String'.
+2021-04-26 12:01:11.523 +02:00 [DBG] Attempting to validate the bound parameter 'genere' of type 'System.String' ...
+2021-04-26 12:01:11.526 +02:00 [DBG] Done attempting to validate the bound parameter 'genere' of type 'System.String'.
+2021-04-26 12:01:11.530 +02:00 [DBG] Executing GetBooksByTitle from controller BookController
+2021-04-26 12:01:11.537 +02:00 [DBG] GetBookByGenere method from service Bookservice with value : Novela
+2021-04-26 12:01:11.543 +02:00 [INF] Entity Framework Core 3.1.13 initialized 'AlejandriaContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2021-04-26 12:01:11.557 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2021-04-26 12:01:11.559 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2021-04-26 12:01:11.561 +02:00 [DBG] Connection id "0HM88J56CP4OQ" accepted.
+2021-04-26 12:01:11.564 +02:00 [DBG] Opening connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:01:11.567 +02:00 [DBG] Connection id "0HM88J56CP4OQ" started.
+2021-04-26 12:01:11.578 +02:00 [DBG] Opened connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:01:11.590 +02:00 [DBG] Executing DbCommand [Parameters=[@__genere_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Genere", b."Summary", b."Title"
+FROM "Book" AS b
+WHERE b."Genere" = @__genere_0
+LIMIT 1
+2021-04-26 12:01:11.614 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[@__genere_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Genere", b."Summary", b."Title"
+FROM "Book" AS b
+WHERE b."Genere" = @__genere_0
+LIMIT 1
+2021-04-26 12:01:11.637 +02:00 [DBG] A data reader was disposed.
+2021-04-26 12:01:11.641 +02:00 [DBG] Closing connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:01:11.645 +02:00 [DBG] Closed connection to database 'postgres' on server 'tcp://localhost:5432'.
+2021-04-26 12:01:11.649 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2021-04-26 12:01:11.658 +02:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2021-04-26 12:01:11.666 +02:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2021-04-26 12:01:11.674 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2021-04-26 12:01:11.679 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2021-04-26 12:01:11.682 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2021-04-26 12:01:11.688 +02:00 [INF] Executing ObjectResult, writing value of type 'Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto'.
+2021-04-26 12:01:11.695 +02:00 [INF] Executed action Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController.GetBookByGenere (Devon4Net.WebAPI.Implementation) in 204.5265ms
+2021-04-26 12:01:11.700 +02:00 [DBG] Connection id "0HM88J56CP4OP" completed keep alive response.
+2021-04-26 12:01:11.705 +02:00 [DBG] 'AlejandriaContext' disposed.
+2021-04-26 12:01:11.708 +02:00 [INF] Request finished in 294.0485ms 200 application/json; charset=utf-8
+2021-04-26 12:01:13.253 +02:00 [DBG] Connection id "0HM88J56CP4OP" received FIN.
+2021-04-26 12:01:13.253 +02:00 [DBG] Connection id "0HM88J56CP4OQ" received FIN.
+2021-04-26 12:01:13.258 +02:00 [DBG] Connection id "0HM88J56CP4OP" sending FIN because: "The client closed the connection."
+2021-04-26 12:01:13.262 +02:00 [DBG] Connection id "0HM88J56CP4OQ" sending FIN because: "The client closed the connection."
+2021-04-26 12:01:13.269 +02:00 [DBG] Connection id "0HM88J56CP4OP" disconnecting.
+2021-04-26 12:01:13.280 +02:00 [DBG] Connection id "0HM88J56CP4OQ" disconnecting.
+2021-04-26 12:01:13.286 +02:00 [DBG] Connection id "0HM88J56CP4OP" stopped.
+2021-04-26 12:01:13.293 +02:00 [DBG] Connection id "0HM88J56CP4OQ" stopped.

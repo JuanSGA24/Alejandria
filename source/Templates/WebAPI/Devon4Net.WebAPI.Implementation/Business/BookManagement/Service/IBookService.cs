@@ -21,6 +21,13 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Service
         Task<BookDto> GetBookByTitle(string title);
 
         /// <summary>
+        /// Search a book by genere
+        /// </summary>
+        /// <param name="genere"></param>
+        /// <returns></returns>
+        Task<BookDto> GetBookByGenere(string genere);
+
+        /// <summary>
         /// Get all books
         /// </summary>
         /// <returns></returns>
@@ -39,5 +46,12 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Service
         /// <returns></returns>
         Task<Guid> DeleteBook(Guid id);
 
+        /// <summary>
+        /// Modify a book by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="bookDto"></param>
+        /// <returns></returns>
+        Task<BookDto> ModifyBookById(Guid id, BookDto bookDto);
     }
 }

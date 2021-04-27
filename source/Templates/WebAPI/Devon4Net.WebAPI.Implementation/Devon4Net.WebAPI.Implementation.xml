@@ -327,7 +327,7 @@
             Author Controller
             </summary>
         </member>
-        <member name="M:Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers.AuthorController.#ctor(Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service.IAuthorService)">
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers.AuthorController.#ctor(Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service.IAuthorService,Devon4Net.Infrastructure.JWT.Handlers.IJwtHandler)">
             <summary>
             Constructor
             </summary>
@@ -344,6 +344,13 @@
             Create an Author
             </summary>
             <param name="employeeDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers.AuthorController.Publish(System.Guid,Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto)">
+            <summary>
+            Publishes a new book
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers.AuthorController.Delete(System.Guid)">
@@ -425,6 +432,14 @@
             <param name="phone"></param>
             <returns></returns>
         </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service.IAuthorService.PublishBook(System.Guid,Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto)">
+            <summary>
+            Publish a book
+            </summary>
+            <param name="AuthorId"></param>
+            <param name="bookDto"></param>
+            <returns></returns>
+        </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service.IAuthorService.DeleteAuthor(System.Guid)">
             <summary>
             DeleteAuthor
@@ -450,6 +465,13 @@
             <param name="title"></param>
             <returns></returns>
         </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController.GetBookByGenere(System.String)">
+            <summary>
+            Gets a book by its genere
+            </summary>
+            <param name="genere"></param>
+            <returns></returns>
+        </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController.GetAllBooks">
             <summary>
             Gets the entire list of books
@@ -469,6 +491,14 @@
             Deletes a book by its id
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers.BookController.ModifyBook(System.Guid,Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto)">
+            <summary>
+            Modifies a book by its id
+            </summary>
+            <param name="bookId"></param>
+            <param name="bookDto"></param>
             <returns></returns>
         </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Converters.BookConverter.ModelToDto(Devon4Net.WebAPI.Implementation.Domain.Entities.Book)">
@@ -505,6 +535,13 @@
             <param name="title"></param>
             <returns></returns>
         </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.BookService.GetBookByGenere(System.String)">
+            <summary>
+            Get book by genere
+            </summary>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.BookService.GetAllBooks">
             <summary>
             Get all books
@@ -524,6 +561,14 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.BookService.ModifyBookById(System.Guid,Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto)">
+            <summary>
+            Modify a book by id
+            </summary>
+            <param name="id"></param>
+            <param name="bookDto"></param>
+            <returns></returns>
+        </member>
         <member name="T:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.IBookService">
             <summary>
             IBookService
@@ -534,6 +579,13 @@
             Search book by title
             </summary>
             <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.IBookService.GetBookByGenere(System.String)">
+            <summary>
+            Search a book by genere
+            </summary>
+            <param name="genere"></param>
             <returns></returns>
         </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.IBookService.GetAllBooks">
@@ -553,6 +605,14 @@
             Delete book by id
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Business.BookManagement.Service.IBookService.ModifyBookById(System.Guid,Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto)">
+            <summary>
+            Modify a book by id
+            </summary>
+            <param name="id"></param>
+            <param name="bookDto"></param>
             <returns></returns>
         </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Business.CyberArkManagement.CyberArkController.CreateUserGroup(Devon4Net.Infrastructure.CyberArk.Dto.Group.CreateGroupRequestDto,System.String)">
@@ -1138,6 +1198,19 @@
             <param name="title"></param>
             <returns></returns>
         </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Data.Repositories.BookRepository.GetBookByGenere(System.String)">
+            <summary>
+            Get a book by genere
+            </summary>
+            <param name="genere"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Devon4Net.WebAPI.Implementation.Data.Repositories.BookRepository.GetAllBooks">
+            <summary>
+            Get all books
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Data.Repositories.BookRepository.Create(Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto.BookDto)">
             <summary>
             Create a book
@@ -1147,7 +1220,7 @@
         </member>
         <member name="M:Devon4Net.WebAPI.Implementation.Data.Repositories.BookRepository.Delete(System.Guid)">
             <summary>
-            
+            Delete a book
             </summary>
             <param name="id"></param>
             <returns></returns>

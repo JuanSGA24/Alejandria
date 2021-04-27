@@ -23,6 +23,7 @@ namespace Devon4Net.WebAPI.Implementation.Domain.Database
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<AuthorBook> AuthorBook { get; set; }
         public virtual DbSet<Book> Book { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -98,6 +99,36 @@ namespace Devon4Net.WebAPI.Implementation.Domain.Database
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasColumnType("character varying");
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.HasIndex(e => e.Password)
+                    .HasName("users_un1")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.UserId)
+                    .HasName("users_un")
+                    .IsUnique();
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.UserId)
+                    .IsRequired()
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.UserRole)
+                    .IsRequired()
+                    .HasColumnType("character varying");
+
+                entity.HasOne(d => d.Author)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.AuthorId)
+                    .HasConstraintName("users_fk");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -10,7 +10,6 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Dto
     /// </summary>
     public class BookDto
     {
-
         /// <summary>
         /// The Name of a Book
         /// </summary>

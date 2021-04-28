@@ -10,5 +10,6 @@
         public const string DevonSamplePolicy = "DevonSamplePolicy";
         public const string Librarian = "Librarian";
         public const string Author = "Author";
+        public const string User = "User";
     }
 }

@@ -14,6 +14,7 @@ using Devon4Net.WebAPI.Implementation.Options;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,18 +30,18 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         private readonly IAuthorRepository _authorRepository;
         private readonly IBookRepository _bookRepository;
         private readonly IAuthorBookRepository _authorBookRepository;
-       // private readonly IUserRepository _userRepository;
+        // private readonly IUserRepository _userRepository;
         private IHttpClientHandler _httpClientHandler;
 
         private readonly AlejandriaOptions _alejandriaOptions;
 
 
-        public AuthorService(IUnitOfWork<AlejandriaContext> uoW, IOptions<AlejandriaOptions> alejandriaOptions, IHttpClientHandler httpClientHandler): base(uoW)
+        public AuthorService(IUnitOfWork<AlejandriaContext> uoW, IOptions<AlejandriaOptions> alejandriaOptions, IHttpClientHandler httpClientHandler) : base(uoW)
         {
             _authorRepository = uoW.Repository<IAuthorRepository>();
             _bookRepository = uoW.Repository<IBookRepository>();
             _authorBookRepository = uoW.Repository<IAuthorBookRepository>();
-           // _userRepository = uoW.Repository<IUserRepository>();
+            // _userRepository = uoW.Repository<IUserRepository>();
             _httpClientHandler = httpClientHandler;
 
             _alejandriaOptions = alejandriaOptions.Value;
@@ -50,19 +51,13 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         /// Get All Authors
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<AuthorDto>> GetAllAuthors()
+        public async Task<IEnumerable<AuthorDto>> GetAllAuthors()
         {
             Devon4NetLogger.Debug($"GetAllAuthors method from service Authorservice");
 
-            var authorListDto = new List<AuthorDto>();
-            var authorList = await _authorRepository.Get();
+            var authorList = await _authorRepository.GetAllAuthors().ConfigureAwait(false);
 
-            foreach(Author a in authorList)
-            {
-                authorListDto.Add(AuthorConverter.ModelToDto(a));
-            }
-
-            return authorListDto;
+            return authorList.Select(AuthorConverter.ModelToDto);
         }
 
         /// <summary>
@@ -77,12 +72,14 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         {
             Devon4NetLogger.Debug($"CreateAuthor method from service AuthorService with value : {authorDto.Name}, {authorDto.Surname}, {authorDto.Email}, {authorDto.Phone}");
 
-            if (authorDto == null || authorDto.Name == null || authorDto.Surname == null || authorDto.Email == null || authorDto.Phone == null)
+            if (authorDto == null || authorDto.Name == null || authorDto.Surname == null || authorDto.Email == null)
             {
                 throw new ArgumentException("One or more field can not be null.");
             }
 
-            return AuthorConverter.ModelToDto(await _authorRepository.Create(authorDto).ConfigureAwait(false));
+            var res = await _authorRepository.CreateAuthor(authorDto).ConfigureAwait(false);
+
+            return AuthorConverter.ModelToDto(res);
         }
 
         public async Task<BookDto> PublishBook(Guid authorId, BookDto bookDto)
@@ -93,7 +90,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
             var newBook = await _bookRepository.GetFirstOrDefault(x => x.Title == bookDto.Title && x.Summary == bookDto.Summary && x.Genere == bookDto.Genere).ConfigureAwait(false);
             var authorBook = await _authorBookRepository.Create(authorId, newBook.Id, DateTime.Now, DateTime.Now.AddYears(_alejandriaOptions.Validity)).ConfigureAwait(false);
 
-           return newBookDto;
+            return newBookDto;
         }
 
         /// <summary>
@@ -104,6 +101,21 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         public async Task<Guid> DeleteAuthor(Guid id)
         {
             return await _authorRepository.Delete(id).ConfigureAwait(false);
+        }
+
+        public Task<AuthorDto> ModifyAuthor(Guid authorId, AuthorDto authorDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Guid> DeleteBookAsAuthor(Guid bookId, AuthorDto authorDto, BookDto bookDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<BookDto> ModifyBookAsAuthor(Guid bookId, Guid authorId, BookDto bookDto)
+        {
+            throw new NotImplementedException();
         }
 
         /*public Task<AuthorDto> CreateUser(string userId, string password, string role)

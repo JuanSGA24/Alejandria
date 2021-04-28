@@ -35,7 +35,7 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         /// </summary>
         /// <param name="authorDto"></param>
         /// <returns></returns>
-        public async Task<Author> Create(AuthorDto authorDto)
+        public async Task<Author> CreateAuthor(AuthorDto authorDto)
         {
             Devon4NetLogger.Debug($"Create method from repository AuthorRepository with value : {authorDto.Name}, {authorDto.Surname}, {authorDto.Email}, {authorDto.Phone}");
 

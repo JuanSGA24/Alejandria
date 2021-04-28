@@ -17,9 +17,11 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
 
         }
 
-        public async Task<AuthorBook> Create(Guid authorId, Guid bookId, DateTime publishDate, DateTime validityDate)
+        public async Task<AuthorBook> CreateAuthor(Guid authorId, Guid bookId, DateTime publishDate, DateTime validityDate)
         {
-            return await Create(new AuthorBook {AuthorId =  authorId, BookId = bookId, PublishDate = publishDate, ValidityDate = validityDate }).ConfigureAwait(false);
+            var res = await Create(new AuthorBook {AuthorId =  authorId, BookId = bookId, PublishDate = publishDate, ValidityDate = validityDate }).ConfigureAwait(false);
+            
+            return res;
         }
     }
 }

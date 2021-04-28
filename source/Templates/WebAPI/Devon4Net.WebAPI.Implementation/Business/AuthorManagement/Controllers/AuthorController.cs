@@ -53,6 +53,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers
             var token = _jwtHandler.CreateClientToken(new List<Claim>
             {
                 new Claim(ClaimTypes.Role, AuthConst.Author),
+                new Claim(ClaimTypes.Role, AuthConst.Librarian),
                 new Claim(ClaimTypes.Name,user),
                 new Claim(ClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
             });

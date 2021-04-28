@@ -23,7 +23,7 @@ namespace Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces
         /// </summary>
         /// <param name="authorDto"></param>
         /// <returns></returns>
-        Task<Author> Create(AuthorDto authorDto);
+        Task<Author> CreateAuthor(AuthorDto authorDto);
 
         /// <summary>
         /// Delete Author

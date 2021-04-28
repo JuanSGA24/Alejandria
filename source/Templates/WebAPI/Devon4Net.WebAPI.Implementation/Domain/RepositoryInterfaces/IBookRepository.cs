@@ -15,9 +15,9 @@ namespace Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
-        Task<Book> GetBookByTitle(string title);
+        Task<IList<Book>> GetBookByTitle(string title);
 
-        Task<Book> GetBookByGenere(string genere);
+        Task<IList<Book>> GetBookByGenere(string genere);
 
         /// <summary>
         /// Get list of all books
@@ -29,13 +29,21 @@ namespace Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces
         /// Create a book
         /// </summary>
         /// <returns></returns>
-        Task<Book> Create(BookDto bookDto);
+        Task<Book> CreateBook(BookDto bookDto);
+
+        /// <summary>
+        /// Get a new book
+        /// </summary>
+        /// <returns></returns>
+        Task<Book> GetNewBook(BookDto bookDto);
 
         /// <summary>
         /// Delete a book by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<Guid> Delete(Guid id);
+        Task<Guid> DeleteBookById(Guid id);
+
+        Task<Book> UpdateBookById(Guid id, BookDto bookDto);
     }
 }

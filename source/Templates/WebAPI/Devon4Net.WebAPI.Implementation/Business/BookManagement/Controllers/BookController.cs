@@ -96,7 +96,7 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers
         public async Task<ActionResult> Create(BookDto bookDto)
         {
             Devon4NetLogger.Debug("Executing Create from controller BookController");
-            return Ok(await _bookService.Create(bookDto).ConfigureAwait(false));
+            return Ok(await _bookService.CreateBook(bookDto).ConfigureAwait(false));
         }
 
         /// <summary>
@@ -110,10 +110,10 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> DeleteBookById(Guid id)
         {
             Devon4NetLogger.Debug("Executing Delete from controller BookController");
-            var result = await _bookService.DeleteBook(id).ConfigureAwait(false);
+            var result = await _bookService.DeleteBookById(id).ConfigureAwait(false);
             return StatusCode(StatusCodes.Status200OK, result);
         }
 

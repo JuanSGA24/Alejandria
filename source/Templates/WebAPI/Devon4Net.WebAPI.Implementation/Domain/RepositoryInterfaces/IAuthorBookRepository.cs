@@ -9,6 +9,6 @@ namespace Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces
     public interface IAuthorBookRepository
     {
 
-        Task<AuthorBook> CreateAuthor(Guid authorId, Guid bookId, DateTime publishDate, DateTime validityDate);
+        Task<AuthorBook> CreateAuthorBook(Guid authorId, Guid bookId, DateTime publishDate, DateTime validityDate);
     }
 }

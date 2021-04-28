@@ -38,6 +38,12 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers
             _jwtHandler = jwtHandler;
         }
 
+        /// <summary>
+        /// Login
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [HttpPost]
         [HttpOptions]
         [AllowAnonymous]
@@ -67,20 +73,21 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("authors")]
-        [ProducesResponseType(typeof(List<AuthorDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IList<AuthorDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> GetAllAuthors()
         {
             Devon4NetLogger.Debug("Executing GetAllAuthors from controller AuthorController");
+
             return Ok(await _authorService.GetAllAuthors().ConfigureAwait(false));
         }
 
         /// <summary>
-        /// Create an Author
+        /// Creates an Author
         /// </summary>
-        /// <param name="employeeDto"></param>
+        /// <param name="authorDto"></param>
         /// <returns></returns>
         [HttpPost]
         [Route("create")]
@@ -88,9 +95,10 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Create(AuthorDto authorDto)
+        public async Task<ActionResult> CreateAuthor(AuthorDto authorDto)
         {
             Devon4NetLogger.Debug("Executing Create from controller AuthorController");
+
             var result = await _authorService.CreateAuthor(authorDto).ConfigureAwait(false);
             return StatusCode(StatusCodes.Status201Created, result);
         }
@@ -111,8 +119,8 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers
         public async Task<ActionResult> Publish(Guid authorId, BookDto bookDto)
         {
             Devon4NetLogger.Debug("Executing Publish from controller AuthorController");
-            var result = await _authorService.PublishBook(authorId, bookDto).ConfigureAwait(false);
-            return Ok(result);
+
+            return Ok(await _authorService.PublishBook(authorId, bookDto).ConfigureAwait(false));
         }
 
         /// <summary>
@@ -126,14 +134,14 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> DeleteAuthor(Guid id)
         {
             Devon4NetLogger.Debug("Executing Delete from controller AuthorController");
+
             var result = await _authorService.DeleteAuthor(id).ConfigureAwait(false);
             return StatusCode(StatusCodes.Status201Created, result);
         }
 
-        
         [HttpPut]
         [Route("edit")]
         [ProducesResponseType(typeof(BookDto), StatusCodes.Status200OK)]

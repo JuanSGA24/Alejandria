@@ -86,9 +86,9 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         {
             Devon4NetLogger.Debug($"PublishBook method from service AuthorService with id : {authorId} and values: {bookDto.Title}, {bookDto.Summary}, {bookDto.Genere}");
 
-            var newBookDto = await _httpClientHandler.Send<BookDto>(HttpMethod.Post, "Books", "/v1/bookmanagement/createbook", bookDto, MediaType.ApplicationJson, null, true, true).ConfigureAwait(false);
-            var newBook = await _bookRepository.GetFirstOrDefault(x => x.Title == bookDto.Title && x.Summary == bookDto.Summary && x.Genere == bookDto.Genere).ConfigureAwait(false);
-            var authorBook = await _authorBookRepository.Create(authorId, newBook.Id, DateTime.Now, DateTime.Now.AddYears(_alejandriaOptions.Validity)).ConfigureAwait(false);
+            var newBookDto = await _httpClientHandler.Send<BookDto>(HttpMethod.Post, "Books", "/v1/bookmanagement/createbook", bookDto, MediaType.ApplicationJson, useCamelCase:true).ConfigureAwait(false);
+            var newBook = await _bookRepository.GetNewBook(bookDto).ConfigureAwait(false);
+            var authorBook = await _authorBookRepository.CreateAuthorBook(authorId, newBook.Id, DateTime.Now, DateTime.Now.AddYears(_alejandriaOptions.Validity)).ConfigureAwait(false);
 
             return newBookDto;
         }
@@ -100,12 +100,17 @@ namespace Devon4Net.WebAPI.Implementation.Business.AuthorManagement.Service
         /// <returns></returns>
         public async Task<Guid> DeleteAuthor(Guid id)
         {
-            return await _authorRepository.Delete(id).ConfigureAwait(false);
+            Devon4NetLogger.Debug($"DeleteAuthor method from service AuthorService with id : {id}");
+
+            return await _authorRepository.DeleteAuthor(id).ConfigureAwait(false);
         }
 
-        public Task<AuthorDto> ModifyAuthor(Guid authorId, AuthorDto authorDto)
+        public async Task<AuthorDto> ModifyAuthor(Guid authorId, AuthorDto authorDto)
         {
-            throw new NotImplementedException();
+            Devon4NetLogger.Debug($"ModifyAuthor method from service AuthorService with id : {authorId} and Name: {authorDto.Name}, Surname: {authorDto.Surname}, Email: {authorDto.Email}, Phone: {authorDto.Phone}");
+
+            var res = await _authorRepository.UpdateAuthor(authorId, authorDto);
+            return AuthorConverter.ModelToDto(res);
         }
 
         public Task<Guid> DeleteBookAsAuthor(Guid bookId, AuthorDto authorDto, BookDto bookDto)

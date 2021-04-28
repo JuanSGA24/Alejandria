@@ -30,6 +30,14 @@ namespace Devon4Net.WebAPI.Implementation.Domain.RepositoryInterfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<Guid> Delete(Guid id);
+        Task<Guid> DeleteAuthor(Guid id);
+
+        /// <summary>
+        /// Update Author
+        /// </summary>
+        /// <param name="authorId"></param>
+        /// <param name="authorDto"></param>
+        /// <returns></returns>
+        Task<Author> UpdateAuthor(Guid authorId, AuthorDto authorDto);
     }
 }

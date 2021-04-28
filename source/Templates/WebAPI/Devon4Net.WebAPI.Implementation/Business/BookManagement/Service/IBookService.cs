@@ -18,33 +18,33 @@ namespace Devon4Net.WebAPI.Implementation.Business.BookManagement.Service
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
-        Task<BookDto> GetBookByTitle(string title);
+        Task<IEnumerable<BookDto>> GetBookByTitle(string title);
 
         /// <summary>
         /// Search a book by genere
         /// </summary>
         /// <param name="genere"></param>
         /// <returns></returns>
-        Task<BookDto> GetBookByGenere(string genere);
+        Task<IEnumerable<BookDto>> GetBookByGenere(string genere);
 
         /// <summary>
         /// Get all books
         /// </summary>
         /// <returns></returns>
-        Task<IList<BookDto>> GetAllBooks();
+        Task<IEnumerable<BookDto>> GetAllBooks();
 
         /// <summary>
         /// Create a book
         /// </summary>
         /// <returns></returns>
-        Task<BookDto> Create(BookDto bookDto);
+        Task<BookDto> CreateBook(BookDto bookDto);
 
         /// <summary>
         /// Delete book by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<Guid> DeleteBook(Guid id);
+        Task<Guid> DeleteBookById(Guid id);
 
         /// <summary>
         /// Modify a book by id

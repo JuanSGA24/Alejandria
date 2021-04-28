@@ -39,7 +39,9 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         {
             Devon4NetLogger.Debug($"Create method from repository AuthorRepository with value : {authorDto.Name}, {authorDto.Surname}, {authorDto.Email}, {authorDto.Phone}");
 
-            return await Create(new Author { Name = authorDto.Name, Surname = authorDto.Surname, Email = authorDto.Email, Phone = authorDto.Phone });
+            var res = await Create(new Author { Name = authorDto.Name, Surname = authorDto.Surname, Email = authorDto.Email, Phone = authorDto.Phone });
+
+            return res;
         }
 
         /// <summary>
@@ -47,9 +49,9 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Guid> Delete(Guid id)
+        public async Task<Guid> DeleteAuthor(Guid id)
         {
-            Devon4NetLogger.Debug($"Delete method from repository AuthorRepository with value : {id}");
+            Devon4NetLogger.Debug($"DeleteAuthor method from repository AuthorRepository with value : {id}");
 
             bool cond = await Delete(x => x.Id == id).ConfigureAwait(false);
 
@@ -58,6 +60,25 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
                 return id;
             }
             throw new Exception($"Author with id = {id} could not be deleted.");
+        }
+
+        public async Task<Author> UpdateAuthor(Guid authorId, AuthorDto authorDto)
+        {
+            Devon4NetLogger.Debug($"UpdateAuthor method from service AuthorRepository with id : {authorId} and Name: {authorDto.Name}, Surname: {authorDto.Surname}, Email: {authorDto.Email}, Phone: {authorDto.Phone}");
+
+            var repoAuthor = await GetFirstOrDefault(x => x.Id == authorId).ConfigureAwait(false);
+            
+            if (repoAuthor == null)
+            {
+                throw new ArgumentException($"The author with id {authorId} does not exist and can not be finded");
+            }
+
+            repoAuthor.Name = authorDto.Name;
+            repoAuthor.Surname = authorDto.Surname;
+            repoAuthor.Email = authorDto.Email;
+            repoAuthor.Phone = authorDto.Phone;
+
+            return await Update(repoAuthor).ConfigureAwait(false);
         }
     }
 }

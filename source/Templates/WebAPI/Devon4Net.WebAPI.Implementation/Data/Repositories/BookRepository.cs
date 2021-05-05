@@ -47,11 +47,11 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         /// Get all books
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<Book>> GetAllBooks()
+        public Task<IList<Book>> GetAllBooks()
         {
             Devon4NetLogger.Debug($"GetAllBooks method from repository BookRepository");
 
-            return await Get().ConfigureAwait(false);
+            return Get();
         }
 
         /// <summary>
@@ -59,19 +59,18 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         /// </summary>
         /// <param name="bookDto"></param>
         /// <returns></returns>
-        public async Task<Book> CreateBook(BookDto bookDto)
+        public  Task<Book> CreateBook(BookDto bookDto)
         {
             Devon4NetLogger.Debug($"Create method from repository BookRepository with values : {bookDto.Title}, {bookDto.Summary}, {bookDto.Genere}");
 
-            return await Create(new Book { Title = bookDto.Title, Summary = bookDto.Summary, Genere = bookDto.Genere }).ConfigureAwait(false);
+            return  Create(new Book { Title = bookDto.Title, Summary = bookDto.Summary, Genere = bookDto.Genere });
         }
 
-        public async Task<Book> GetNewBook(BookDto bookDto)
+        public  Task<Book> GetNewBook(BookDto bookDto)
         {
-            Devon4NetLogger.Debug($"CreateNewBook method from repository BookRepository with values : {bookDto.Title}, {bookDto.Summary}, {bookDto.Genere}");
+            Devon4NetLogger.Debug($"GetNewBook method from repository BookRepository with values : {bookDto.Title}, {bookDto.Summary}, {bookDto.Genere}");
 
-            var res = await GetFirstOrDefault(x => x.Title == bookDto.Title && x.Summary == bookDto.Summary && x.Genere == bookDto.Genere).ConfigureAwait(false);
-            return res;
+            return GetFirstOrDefault(x => x.Title == bookDto.Title && x.Summary == bookDto.Summary && x.Genere == bookDto.Genere);
         }
 
         /// <summary>

@@ -23,11 +23,11 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         /// Get all authors
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<Author>> GetAllAuthors()
+        public Task<IList<Author>> GetAllAuthors()
         {
             Devon4NetLogger.Debug($"GetAllAuthors method from repository AuthorRepository");
 
-            return await Get().ConfigureAwait(false);
+            return Get();
         }
 
         /// <summary>
@@ -35,13 +35,11 @@ namespace Devon4Net.WebAPI.Implementation.Data.Repositories
         /// </summary>
         /// <param name="authorDto"></param>
         /// <returns></returns>
-        public async Task<Author> CreateAuthor(AuthorDto authorDto)
+        public Task<Author> CreateAuthor(AuthorDto authorDto)
         {
             Devon4NetLogger.Debug($"Create method from repository AuthorRepository with value : {authorDto.Name}, {authorDto.Surname}, {authorDto.Email}, {authorDto.Phone}");
 
-            var res = await Create(new Author { Name = authorDto.Name, Surname = authorDto.Surname, Email = authorDto.Email, Phone = authorDto.Phone });
-
-            return res;
+            return Create(new Author { Name = authorDto.Name, Surname = authorDto.Surname, Email = authorDto.Email, Phone = authorDto.Phone });
         }
 
         /// <summary>
